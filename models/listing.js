@@ -1,27 +1,36 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const listeningSchema = new Schema({
+const ListeningSchema = new Schema({
   title: {
-    type:String,
-    require:true,
+    type: String,
+    required: true, // corrected from 'require' to 'required'
   },
   description: String,
-  Image: {
-    type:String,
-    default:
-      "https://i.ibb.co/VmcCjbP/9.png",
-    set:(v) => v === "" ? "https://i.ibb.co/VmcCjbP/9.png" : v,
 
+  image: {
+    filename: {
+      type: String,
+      default:
+        "listingimage",
+    },
+    url: {
+        type: String,
+        default: "https://i.ibb.co/VmcCjbP/9.png",
+        set: (v) => (v === "" ? "https://i.ibb.co/VmcCjbP/9.png" : v), },
   },
+//   image:
+//      {     //actually heres the main problem  wait dont do anything
+//     type: String,
+//     default: "https://i.ibb.co/VmcCjbP/9.png",
+//     set: (v) => (v === "" ? "https://i.ibb.co/VmcCjbP/9.png" : v),
+//   },
   price: Number,
   location: String,
   country: String,
-});
+});                                             //see thisok i m checking the issue wait 
 
 
-
-const Listing = mongoose.model("Listing", listeningSchema);
+const Listing = mongoose.model("Listing", ListeningSchema);
 module.exports = Listing;
-
 
