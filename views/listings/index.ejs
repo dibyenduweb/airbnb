@@ -7,16 +7,18 @@
     </form> -->
  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 ">
     <% for(let listing of allListings) { %>
-        <div class="card col w-25 p-3 " style="width: 18rem">
-          <img src="<%= listing.image.url%>" style="height: 10rem; " class="card-img-top" alt="listing_image" />
-          <div class="card-body">
-      
-            <p class="card-text">
-                <b><%= listing.title%> </b><br>
-            &#8377;  <%= listing.price.toLocaleString("en-IN")%> /night
-          </p>
+      <a href="/listings/<%= listing._id%>" class="listing-link">
+          <div class="card col  ">
+            <img src="<%= listing.image.url%>" style="height: 10rem; " class="card-img-top" alt="listing_image" />
+           <div class="card-img-overlay"><i class="fa-regular fa-heart"></i></div>
+            <div class="card-body">
+              <p class="card-text">
+                  <b><%= listing.title%> </b><br>
+              &#8377;  <%= listing.price.toLocaleString("en-IN")%> /night
+            </p>
+            </div>
           </div>
-        </div>
+        </a>
         <% } %>
  </div>
 </body>

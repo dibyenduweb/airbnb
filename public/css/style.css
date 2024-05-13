@@ -72,4 +72,14 @@ body{
     font-weight: 400 !important;
 }
 
-
+.listing-link{
+    text-decoration: none;
+}
+/* cards effects */
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
