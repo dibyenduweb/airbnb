@@ -19,18 +19,11 @@ const ListeningSchema = new Schema({
         default: "https://i.ibb.co/VmcCjbP/9.png",
         set: (v) => (v === "" ? "https://i.ibb.co/VmcCjbP/9.png" : v), },
   },
-//   image:
-//      {     //actually heres the main problem  wait dont do anything
-//     type: String,
-//     default: "https://i.ibb.co/VmcCjbP/9.png",
-//     set: (v) => (v === "" ? "https://i.ibb.co/VmcCjbP/9.png" : v),
-//   },
   price: Number,
   location: String,
   country: String,
-});                                             //see thisok i m checking the issue wait 
+});                                           
 
 
 const Listing = mongoose.model("Listing", ListeningSchema);
 module.exports = Listing;
-
