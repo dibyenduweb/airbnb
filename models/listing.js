@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const ListeningSchema = new Schema({
   title: {
     type: String,
-    required: true, // corrected from 'require' to 'required'
+    required: true,
   },
   description: String,
 
